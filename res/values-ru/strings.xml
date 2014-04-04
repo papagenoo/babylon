@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="answer_hint">Ответ</string>
+    <string name="apply_button_text">Принять</string>
+    <string name="right_message">Верно!</string>
+    <string name="wrong_message">Ошибка!</string>
+</resources>

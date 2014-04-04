@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Babylon</string>
+    <string name="answer_hint">Answer</string>
+    <string name="apply_button_text">Apply</string>
+    <string name="right_message">Right!</string>
+    <string name="wrong_message">Wrong!</string>
+</resources>
