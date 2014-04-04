@@ -288,6 +288,7 @@
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="7C098DC5694B3DB6B021E230CA5D8A6" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -707,12 +708,12 @@
       <changelist id="598e508e-a1c5-4532-82fa-621eb3f7c5fa" name="Default" comment="" />
       <created>1396561222749</created>
       <updated>1396561222749</updated>
-      <workItem from="1396561227613" duration="8150000" />
+      <workItem from="1396561227613" duration="8880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8150000" />
+    <option name="totallyTimeSpent" value="8880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="816" extended-state="6" />
