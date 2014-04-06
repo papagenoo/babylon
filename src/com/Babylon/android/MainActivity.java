@@ -1,15 +1,14 @@
-package com.Babylon;
+package com.babylon.android;
 
 import android.app.Activity;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
+import com.babylon.R;
 
 public class MainActivity extends Activity {
 
@@ -86,22 +85,31 @@ public class MainActivity extends Activity {
         answerEditText = (EditText) findViewById(R.id.answerEditText);
         applyButton = (Button) findViewById(R.id.applyButton);
 
+
+
         questionTextView.setText("он делает");
 
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String answer = answerEditText.getText().toString();
-                String rightMessage = MainActivity.this.getString(R.string.right_message);
-                String wrongMessage = MainActivity.this.getString(R.string.wrong_message);
-                String message = wrongMessage;
-
-                if (answer.equals("er macht")) {
-                    message = rightMessage;
-                }
-
-                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                gotoWordsActivity();
+//                String answer = answerEditText.getText().toString();
+//                String rightMessage = MainActivity.this.getString(R.string.right_message);
+//                String wrongMessage = MainActivity.this.getString(R.string.wrong_message);
+//                String message = wrongMessage;
+//
+//                if (answer.equals("er macht")) {
+//                    message = rightMessage;
+//                }
+//
+//                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void gotoWordsActivity() {
+        Intent i = new Intent(this, WordTranslateActivity.class);
+        startActivity(i);
+
     }
 }
