@@ -1,7 +1,6 @@
 package com.babylon.core.tests;
 
 import com.babylon.core.WordTranslations;
-import com.babylon.core.WordVariants;
 import com.babylon.core.Words;
 import org.junit.Assert;
 import org.junit.Test;
@@ -37,7 +36,7 @@ public class WordTranslationsTest {
 
 //}  @Test
 //   public void test3() {
-//    WordVariants words = new WordVariants();
+//    PhraseWithVariants words = new PhraseWithVariants();
 //    words.add("делать", new String[] { "machen", "" });
 //    words.add("любить");
 //    words.add("спрашивать");
