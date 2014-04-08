@@ -26,3 +26,5 @@ proguard/
 .idea/tasks.xml
 
 out/
+
+.DS_Store
