@@ -7,7 +7,7 @@ package com.babylon.core;
  * Time: 19:16
  * To change this template use File | Settings | File Templates.
  */
-public class MockTimeSink implements TimeSink {
+public class MockTimeSink implements ClockObserver {
     private int itsHours;
     private int itsMinutes;
     private int itsSeconds;
@@ -20,13 +20,14 @@ public class MockTimeSink implements TimeSink {
     {
         return itsMinutes;
     }
+
     public int getSeconds()
     {
         return itsSeconds;
     }
 
-    public void setTime(int hours, int minutes, int seconds)
-    {
+    @Override
+    public void update(int hours, int minutes, int seconds) {
         itsHours = hours;
         itsMinutes = minutes;
         itsSeconds = seconds;

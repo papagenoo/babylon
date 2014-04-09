@@ -1,5 +1,7 @@
 package com.babylon.core;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Max Boytsov
@@ -7,16 +9,10 @@ package com.babylon.core;
  * Time: 19:10
  * To change this template use File | Settings | File Templates.
  */
-public class MockTimeSource implements TimeSource {
-
-    private ClockDriver itsDriver;
+public class MockTimeSource extends TimeSource {
 
     public void setTime(int hours, int minutes, int seconds) {
-        itsDriver.update(hours, minutes, seconds);
+        notify(hours, minutes, seconds);
     }
 
-    @Override
-    public void setDriver(ClockDriver driver) {
-        itsDriver = driver;
-    }
 }
