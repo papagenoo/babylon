@@ -7,15 +7,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.babylon.R;
 import com.babylon.android.layout.PredicateLayout;
+import com.babylon.core.Database;
+import com.babylon.core.InMemoryDatabase;
 import com.babylon.core.PhraseParserTransaction;
 import com.babylon.core.PhraseWithVariants;
-import com.babylon.core.TranslationDatabase;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class PhraseMatchActivity extends Activity implements View.OnClickListener {
-    //
+    Database database = new InMemoryDatabase();
 
     TextView questionTextView;
     String original;
@@ -37,7 +38,7 @@ public class PhraseMatchActivity extends Activity implements View.OnClickListene
 
         questionTextView.setText(original);
 
-        PhraseWithVariants pwv = TranslationDatabase.getPhraseWithVariants(original);
+        PhraseWithVariants pwv = database.getPhraseWithVariants(original);
         original = pwv.getOriginal();
         translation = pwv.getTranslation();
         variants = pwv.getVariants();

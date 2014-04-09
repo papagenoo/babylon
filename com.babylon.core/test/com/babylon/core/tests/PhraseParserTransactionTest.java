@@ -1,9 +1,11 @@
 package com.babylon.core.tests;
 
+import com.babylon.core.InMemoryDatabase;
 import com.babylon.core.PhraseParserTransaction;
 import com.babylon.core.PhraseWithVariants;
-import com.babylon.core.TranslationDatabase;
+import com.babylon.core.Database;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,6 +15,12 @@ import java.util.List;
  * Created by max on 08/04/14.
  */
 public class PhraseParserTransactionTest {
+    Database database;
+
+    @Before
+    public void setUp() {
+        database = new InMemoryDatabase();
+    }
 
     @Test
     public void executeTest() {
@@ -28,7 +36,7 @@ public class PhraseParserTransactionTest {
         PhraseParserTransaction parser = new PhraseParserTransaction(sourseText);
         try {
             parser.execute();
-            PhraseWithVariants pwv = TranslationDatabase.getPhraseWithVariants(original);
+            PhraseWithVariants pwv = database.getPhraseWithVariants(original);
             Assert.assertNotNull(pwv);
             Assert.assertEquals(original, pwv.getOriginal());
             Assert.assertEquals(translation, pwv.getTranslation());

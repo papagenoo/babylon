@@ -6,7 +6,7 @@ import java.util.List;
  * Created by max on 08/04/14.
  */
 public class AddPhraseWithVariantsTransaction implements Transaction {
-
+    Database database = new InMemoryDatabase();
 
     private final String original;
     private final String translation;
@@ -21,6 +21,6 @@ public class AddPhraseWithVariantsTransaction implements Transaction {
     @Override
     public void execute() throws Throwable {
         PhraseWithVariants pwv = new PhraseWithVariants(original, translation, variants);
-        TranslationDatabase.addPhraseWithVariants(original, pwv);
+        database.addPhraseWithVariants(original, pwv);
     }
 }

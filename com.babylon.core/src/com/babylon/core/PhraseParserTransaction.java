@@ -1,7 +1,5 @@
 package com.babylon.core;
 
-import com.babylon.core.Transaction;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +7,7 @@ import java.util.List;
  * Created by max on 08/04/14.
  */
 public class PhraseParserTransaction implements Transaction {
+    Database database = new InMemoryDatabase();
 
     private final String sourseText;
 
@@ -40,7 +39,7 @@ public class PhraseParserTransaction implements Transaction {
         }
 
         PhraseWithVariants pwv = new PhraseWithVariants(original, translation, variants);
-        TranslationDatabase.addPhraseWithVariants(original, pwv);
+        database.addPhraseWithVariants(original, pwv);
 
     }
 }

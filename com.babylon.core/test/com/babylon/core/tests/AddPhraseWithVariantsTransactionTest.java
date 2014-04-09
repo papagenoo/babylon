@@ -1,10 +1,8 @@
 package com.babylon.core.tests;
 
-import com.babylon.core.AddPhraseWithVariantsTransaction;
-import com.babylon.core.PhraseWithVariants;
-import com.babylon.core.Transaction;
-import com.babylon.core.TranslationDatabase;
+import com.babylon.core.*;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -15,6 +13,12 @@ import java.util.ListIterator;
  * Created by max on 08/04/14.
  */
 public class AddPhraseWithVariantsTransactionTest {
+    Database database;
+
+    @Before
+    public void setUp() {
+        database = new InMemoryDatabase();
+    }
 
     @Test
     public void variantsTest() {
@@ -29,7 +33,7 @@ public class AddPhraseWithVariantsTransactionTest {
         Transaction awvt = new AddPhraseWithVariantsTransaction(original, translation, variants);
         try {
             awvt.execute();
-            PhraseWithVariants pwv = TranslationDatabase.getPhraseWithVariants(original);
+            PhraseWithVariants pwv = database.getPhraseWithVariants(original);
             Assert.assertNotNull(pwv);
             Assert.assertEquals(original, pwv.getOriginal());
             Assert.assertEquals(translation, pwv.getTranslation());
@@ -42,7 +46,7 @@ public class AddPhraseWithVariantsTransactionTest {
             }
 //            Assert.fail();
 
-            pwv = TranslationDatabase.getPhraseWithVariants("not present phrase");
+            pwv = database.getPhraseWithVariants("not present phrase");
             Assert.assertNull(pwv);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
