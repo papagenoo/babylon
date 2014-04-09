@@ -10,9 +10,16 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class MockTimeSource extends TimeSource {
+    TimeSourceImplementation timeSourceImpl =
+            new TimeSourceImplementation();
 
-    public void setTime(int hours, int minutes, int seconds) {
-        notify(hours, minutes, seconds);
+    public void setTime(int hours, int mins, int secs) {
+        timeSourceImpl.notify(hours, mins, secs);
+    }
+
+    public void registerObserver(ClockObserver observer)
+    {
+        timeSourceImpl.registerObserver(observer);
     }
 
 }

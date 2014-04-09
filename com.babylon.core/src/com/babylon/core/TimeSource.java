@@ -9,15 +9,8 @@ import java.util.ArrayList;
  * Time: 19:25
  * To change this template use File | Settings | File Templates.
  */
-public abstract class TimeSource {
-    private ArrayList<ClockObserver> itsObservers = new ArrayList<ClockObserver>();
+public interface TimeSource {
 
-    public void registerObserver(ClockObserver observer) {
-        itsObservers.add(observer);
-    }
+    public void registerObserver(ClockObserver observer);
 
-    protected void notify(int hours, int mins, int secs) {
-        for (ClockObserver observer : itsObservers)
-            observer.update(hours, mins, secs);
-    }
 }
