@@ -7,17 +7,16 @@
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Original Text"
-            android:id="@+id/originalTextView"/>
-    <TextView
-            android:layout_width="fill_parent"
+            android:text="Question Text"
+            android:id="@+id/questionTextView"/>
+    <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Translation Text"
-            android:id="@+id/translationTextView"/>
+            android:id="@+id/answerEditText" android:hint="@string/answer_hint"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Далее"
-            android:id="@+id/nextButton"/>
+            android:text="@string/apply_button_text"
+            android:id="@+id/applyButton"/>
 </LinearLayout>
 

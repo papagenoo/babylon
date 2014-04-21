@@ -1,4 +1,4 @@
-package com.babylon.core.tests;
+package com.babylon.core;
 
 import com.babylon.core.WordTranslations;
 import com.babylon.core.Words;

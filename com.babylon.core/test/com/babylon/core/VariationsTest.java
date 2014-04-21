@@ -1,4 +1,4 @@
-package com.babylon.core.tests;
+package com.babylon.core;
 
 import com.babylon.core.Variations;
 import org.junit.Assert;
