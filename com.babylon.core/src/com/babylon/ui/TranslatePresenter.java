@@ -40,6 +40,10 @@ public class TranslatePresenter {
     InnerState innerState = InnerState.Original;
     OuterState outerState = OuterState.Start;
 
+    public void next() {
+        handle(Event.Next);
+    }
+
     public void handle(Event event) {
         switch (outerState) {
             case Start:
